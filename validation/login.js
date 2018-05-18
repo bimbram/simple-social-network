@@ -8,7 +8,6 @@ module.exports = function validateLoginInput(data) {
 
   // Validating User's Email
   if(!validator.isEmail(data.email)) {
-    console.log("this is data.email", validator.isEmail(data.email));
     errors.email = 'Email is invalid';
   }
   if(validator.isEmpty(data.email)) {
