@@ -7,7 +7,7 @@ module.exports = function validateRegisterInput(data) {
   data.email = !isEmpty(data.email) ? data.email : '';
   data.password = !isEmpty(data.password) ? data.password : '';
   data.confirmedPassword = !isEmpty(data.confirmedPassword) ? data.confirmedPassword : '';
-  console.log("this is data", data);
+
   // Validating User's Name
   if(!validator.isLength(data.name, { min: 2, max: 30 })) {
     errors.name = 'Name must be between 2 and 30 characters';
@@ -18,7 +18,6 @@ module.exports = function validateRegisterInput(data) {
 
   // Validating User's Email
   if(!validator.isEmail(data.email)) {
-    console.log("this is data.email", validator.isEmail(data.email));
     errors.email = 'Email is invalid';
   }
   if(validator.isEmpty(data.email)) {
