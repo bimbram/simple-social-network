@@ -257,8 +257,6 @@ router.delete('/experience/:exp_id', passport.authenticate('jwt', { session: fal
 // @desc    Delete education from profile
 // @access  Private
 router.delete('/education/:edu_id', passport.authenticate('jwt', { session: false }), (req, res) => {
-
-
   Profile.findOne({user: req.user.id})
     .then(profile => {
       // Get remove index
